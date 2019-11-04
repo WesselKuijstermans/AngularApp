@@ -22,15 +22,12 @@ variables:
 # Testing nodejes backend
 #
 testing:
-  image: node:latest
+  image: atlassianlabs/docker-node-jdk-chrome-firefox
   stage: test
   services:
     - docker:dind
   variables:
     NODE_ENV: development
-    # We need Chrome to run our tests, so this
-    # path needs to be known in the Docker container
-    CHROME_BIN: /usr/bin/chromium
     # DB_USER: $DB_USER
     # DB_PASSWORD: $DB_PASSWORD
     # DB_HOST: $DB_HOST
@@ -41,7 +38,7 @@ testing:
   script:
     - npm run test
     - npm run e2e
-
+    - npm run sonar
 #
 # Deploy to Heroku
 # DPL is a deploy tool made for continuous deployment that’s developed and used

@@ -22,7 +22,7 @@ variables:
 # Testing nodejes backend
 #
 testing:
-  image: node:carbon
+  image: node:latest
   stage: test
   services:
     - docker:dind

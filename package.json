@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node src/server.js",
+    "postinstall": "ng build --prod --aot",
     "build": "ng build",
     "pretty": "pretty-quick",
     "sonar": "sonar-scanner",

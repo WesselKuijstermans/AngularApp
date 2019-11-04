@@ -28,6 +28,9 @@ testing:
     - docker:dind
   variables:
     NODE_ENV: development
+    # We need Chrome to run our tests, so this
+    # path needs to be known in the Docker container
+    CHROME_BIN: /usr/bin/chromium-browser
     # DB_USER: $DB_USER
     # DB_PASSWORD: $DB_PASSWORD
     # DB_HOST: $DB_HOST

@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-8">
+  <div class="col-sm-8">
     <h1>Over deze applicatie</h1>
     <p>
       Deze applicatie is gemaakt in het kader van het vak 'Clientside web frameworks' van Avans Hogeschool
@@ -10,39 +10,9 @@
       Hier beschrijft je wat je project inhoudt. Beschrijf ook de entiteiten/domeinobjecten die je gebruikt,
       en benoem per entiteit de attributen met hun datatype.
     </p>
-    <h3>Entiteiten</h3>
-    <div class="row">
-      <div class="col">
-        <p>Entiteit 1</p>
-        <ul>
-          <li>naam: string</li>
-          <li>id: number</li>
-          <li>birthdate: date</li>
-          <li>isSelected: boolean</li>
-        </ul>
-      </div>
-      <div class="col">
-        <p>Entiteit 2</p>
-        <ul>
-          <li>naam: string</li>
-          <li>id: number</li>
-          <li>birthdate: date</li>
-          <li>isSelected: boolean</li>
-        </ul>
-      </div>
-      <div class="col">
-        <p>Entiteit 3</p>
-        <ul>
-          <li>naam: string</li>
-          <li>id: number</li>
-          <li>birthdate: date</li>
-          <li>isSelected: boolean</li>
-        </ul>
-      </div>
-    </div>
   </div>
-  <div class="col">
-    <div class="card" style="width: 18rem;">
+  <div class="col-sm-4">
+    <div class="card">
       <img
         src="https://icons-for-free.com/iconfiles/png/512/human+person+user+icon-1320196276306824343.png"
         class="card-img-top rounded-circle border profile-pic"
@@ -58,8 +28,39 @@
   </div>
 </div>
 
+<h3>Entiteiten</h3>
 <div class="row">
-  <div class="col-8">
+  <div class="col-sm-12 col-md-4">
+    <p>Entiteit 1</p>
+    <ul>
+      <li>naam: string</li>
+      <li>id: number</li>
+      <li>birthdate: date</li>
+      <li>isSelected: boolean</li>
+    </ul>
+  </div>
+  <div class="col-sm-12 col-md-4">
+    <p>Entiteit 2</p>
+    <ul>
+      <li>naam: string</li>
+      <li>id: number</li>
+      <li>birthdate: date</li>
+      <li>isSelected: boolean</li>
+    </ul>
+  </div>
+  <div class="col-sm-12 col-md-4">
+    <p>Entiteit 3</p>
+    <ul>
+      <li>naam: string</li>
+      <li>id: number</li>
+      <li>birthdate: date</li>
+      <li>isSelected: boolean</li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
     <h3>Use Cases</h3>
     <p>De applicatie biedt de volgende functionaliteit.</p>
     <div *ngFor="let UC of useCases">

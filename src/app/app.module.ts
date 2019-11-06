@@ -7,10 +7,12 @@ import { AppComponent } from './core/app/app.component'
 import { UsecasesComponent } from './about/usecases/usecases.component'
 import { NavbarComponent } from './core/navbar/navbar.component'
 import { UsecaseComponent } from './about/usecases/usecase/usecase.component'
+import { RouterModule } from '@angular/router'
+import { DashboardComponent } from './core/dashboard/dashboard.component'
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, UsecasesComponent, UsecaseComponent],
-  imports: [BrowserModule, NgbModule, AppRoutingModule],
+  declarations: [AppComponent, NavbarComponent, UsecasesComponent, UsecaseComponent, DashboardComponent],
+  imports: [BrowserModule, RouterModule, NgbModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

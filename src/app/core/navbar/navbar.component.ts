@@ -5,7 +5,13 @@ import { Component, Input } from '@angular/core'
   template: `
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">{{ title }}</a>
+        <a
+          class="navbar-brand"
+          routerLink="/"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >{{ title }}</a
+        >
         <button
           class="navbar-toggler hidden-sm-up"
           type="button"
@@ -34,7 +40,7 @@ import { Component, Input } from '@angular/core'
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" routerLink="about" [routerLinkActive]="['active']">About</a>
             </li>
           </ul>
         </div>

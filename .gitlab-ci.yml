@@ -9,7 +9,13 @@ image: node:latest
 
 stages:
   - test
-  - production
+  - metrics
+  - deploy
+
+cache:
+  key: $CI_COMMIT_REF_SLUG
+  paths:
+    - node_modules/
 
 #
 # Global variables
@@ -19,9 +25,9 @@ variables:
   DOCKER_DRIVER: overlay2
 
 #
-# Testing nodejes backend
+# Run unittests
 #
-testing:
+unittests:
   image: atlassianlabs/docker-node-jdk-chrome-firefox
   stage: test
   services:
@@ -37,8 +43,40 @@ testing:
     - npm install --no-optional
   script:
     - npm run test
+
+#
+# Run unittests
+#
+end2end:
+  image: atlassianlabs/docker-node-jdk-chrome-firefox
+  stage: test
+  services:
+    - docker:dind
+  variables:
+    NODE_ENV: development
+  before_script:
+    - npm install --no-optional
+  script:
+    - echo "Fix this - e2e not working yet!"
     # - npm run e2e
+
+#
+# Run unittests
+#
+metrics:
+  image: atlassianlabs/docker-node-jdk-chrome-firefox
+  stage: metrics
+  services:
+    - docker:dind
+  variables:
+    NODE_ENV: development
+  before_script:
+    - npm install --no-optional
+  script:
     - npm run sonar
+  only:
+    - development, master
+
 #
 # Deploy to Heroku
 # DPL is a deploy tool made for continuous deployment that’s developed and used
@@ -47,7 +85,7 @@ testing:
 #
 production:
   type: deploy
-  stage: production
+  stage: deploy
   image: ruby:latest
   script:
     # Get your key at https://dashboard.heroku.com/account

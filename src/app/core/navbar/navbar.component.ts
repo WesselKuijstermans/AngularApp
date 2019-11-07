@@ -33,6 +33,7 @@ import { Component, Input } from '@angular/core'
                 class="nav-link disabled"
                 routerLink="/"
                 [routerLinkActive]="['active']"
+                [routerLinkActiveOptions]="{ exact: true }"
                 tabindex="-1"
                 aria-disabled="true"
                 >Disabled</a
@@ -44,20 +45,41 @@ import { Component, Input } from '@angular/core'
                   Actions
                 </button>
                 <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                  <button class="dropdown-item" routerLink="/">
+                  <button
+                    class="dropdown-item"
+                    routerLink="/"
+                    [routerLinkActive]="['active']"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                  >
                     Action - 1
                   </button>
-                  <button class="dropdown-item" routerLink="/">
+                  <button
+                    class="dropdown-item"
+                    routerLink="/"
+                    [routerLinkActive]="['active']"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                  >
                     Another Action
                   </button>
-                  <button class="dropdown-item" routerLink="/">
+                  <button
+                    class="dropdown-item"
+                    routerLink="/"
+                    [routerLinkActive]="['active']"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                  >
                     Something else is here
                   </button>
                 </div>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="about" [routerLinkActive]="['active']">About</a>
+              <a
+                class="nav-link"
+                routerLink="about"
+                [routerLinkActive]="['active']"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >About</a
+              >
             </li>
           </ul>
         </div>

@@ -75,7 +75,8 @@ metrics:
   script:
     - npm run sonar
   only:
-    - development, master
+    - development
+    - master
 
 #
 # Deploy to Heroku

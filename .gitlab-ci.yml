@@ -80,7 +80,7 @@ metrics:
   artifacts:
     paths:
       - dist/
-      - coverage/lcov.info
+      - coverage/$HEROKU_APP_NAME/lcov.info
     expire_in: 1 day
 
 #

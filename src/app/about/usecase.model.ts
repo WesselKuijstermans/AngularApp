@@ -1,4 +1,7 @@
 export class UseCase {
+  // Optioneel description attribuut
+  description? = '-'
+
   constructor(
     public id: string,
     public name: string,

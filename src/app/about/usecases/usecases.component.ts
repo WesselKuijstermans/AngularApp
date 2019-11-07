@@ -11,6 +11,7 @@ export class UsecasesComponent implements OnInit {
     {
       id: 'UC-01',
       name: 'Inloggen',
+      description: 'Hiermee logt een bestaande gebruiker in.',
       scenario: [
         'Gebruiker vult email en password in en klikt op Login knop.',
         'De applicatie valideert de ingevoerde gegevens.',
@@ -23,6 +24,7 @@ export class UsecasesComponent implements OnInit {
     {
       id: 'UC-02',
       name: 'Naam',
+      description: 'Hiermee kan een administrator ...',
       scenario: ['Stap 1', 'Stap 2', 'Stap 3'],
       actor: 'Administrator',
       precondition: 'De actor is ingelogd',

@@ -26,17 +26,34 @@ import { Component, Input } from '@angular/core'
         <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" routerLink="/" [routerLinkActive]="['active']">Link</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              <a
+                class="nav-link disabled"
+                routerLink="/"
+                [routerLinkActive]="['active']"
+                tabindex="-1"
+                aria-disabled="true"
+                >Disabled</a
+              >
             </li>
-            <li class="nav-item dropdown" ngbDropdown>
-              <a class="nav-link dropdown-toggle" id="id01" href="#" ngbDropdownToggle>Files</a>
-              <div class="dropdown-menu" aria-labelledby="id01" ngbDropdownMenu>
-                <a class="dropdown-item" href="#">Link 1</a>
-                <a class="dropdown-item" href="#">Link 2</a>
-                <a class="dropdown-item" href="#">Link 3</a>
+            <li class="nav-item dropdown">
+              <div ngbDropdown class="d-inline-block">
+                <button class="btn btn-link" id="dropdownMenu1" ngbDropdownToggle>
+                  Actions
+                </button>
+                <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                  <button class="dropdown-item" routerLink="/">
+                    Action - 1
+                  </button>
+                  <button class="dropdown-item" routerLink="/">
+                    Another Action
+                  </button>
+                  <button class="dropdown-item" routerLink="/">
+                    Something else is here
+                  </button>
+                </div>
               </div>
             </li>
             <li class="nav-item">
@@ -46,7 +63,11 @@ import { Component, Input } from '@angular/core'
         </div>
       </div>
     </nav>
-  `
+  `,
+  styles: [
+    '.btn-link { color: rgba(255,255,255,.5); text-decoration: none; }',
+    '.btn-link.focus, .btn-link:focus, .btn-link.hover, .btn-link:hover { color: rgba(255,255,255,.75); text-decoration: none; box-shadow: none; }'
+  ]
 })
 export class NavbarComponent {
   @Input() title: string

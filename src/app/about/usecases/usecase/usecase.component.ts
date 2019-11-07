@@ -7,13 +7,17 @@ import { UseCase } from '../../usecase.model'
     <table class="table table-sm table-bordered">
       <tbody>
         <tr class="table-primary">
-          <th scope="row" class="col-3">Naam</th>
+          <th scope="row" style="width: 16.66%">Naam</th>
           <td>
             <strong>{{ useCase.id }} {{ useCase.name }}</strong>
           </td>
         </tr>
         <tr>
-          <th scope="row" class="col-3">Actor</th>
+          <th scope="row">Beschrijving</th>
+          <td>{{ useCase.description }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Actor</th>
           <td>{{ useCase.actor }}</td>
         </tr>
         <tr>

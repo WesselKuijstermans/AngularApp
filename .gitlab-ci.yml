@@ -77,6 +77,11 @@ metrics:
   only:
     - development
     - master
+  artifacts:
+    paths:
+      - dist/
+      - coverage/lcov.info
+    expire_in: 1 day
 
 #
 # Deploy to Heroku

@@ -43,6 +43,7 @@ unittests:
     - npm install --no-optional
   script:
     - npm run test
+    - npm run sonar
 
 #
 # Run unittests
@@ -59,29 +60,6 @@ end2end:
   script:
     - echo "Fix this - e2e not working yet!"
     # - npm run e2e
-
-#
-# Run unittests
-#
-metrics:
-  image: atlassianlabs/docker-node-jdk-chrome-firefox
-  stage: metrics
-  services:
-    - docker:dind
-  variables:
-    NODE_ENV: development
-  before_script:
-    - npm install --no-optional
-  script:
-    - npm run sonar
-  only:
-    - development
-    - master
-  artifacts:
-    paths:
-      - dist/
-      - coverage/$HEROKU_APP_NAME/lcov.info
-    expire_in: 1 day
 
 #
 # Deploy to Heroku

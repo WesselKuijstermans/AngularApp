@@ -8,7 +8,7 @@ describe('workspace-project App', () => {
     page = new AppPage()
   })
 
-  it("should display 'My App' as navbar-brand", () => {
+  it('should display "My App" as navbar-brand', () => {
     page.navigateTo()
     expect(page.getTitleText()).toEqual('My App')
   })

@@ -49,7 +49,7 @@ unittests:
 # Run unittests
 #
 end2end:
-  image: atlassianlabs/docker-node-jdk-chrome-firefox
+  image: atlassianlabs/docker-node-jdk-chrome-firefox:latest
   stage: test
   services:
     - docker:dind
@@ -58,8 +58,8 @@ end2end:
   before_script:
     - npm install --no-optional
   script:
-    - echo "Fix this - e2e not working yet!"
-    # - npm run e2e
+    # - echo "Fix this - e2e not working yet!"
+    - npm run e2e
 
 #
 # Deploy to Heroku

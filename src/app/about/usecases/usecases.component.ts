@@ -7,6 +7,9 @@ import { UseCase } from '../usecase.model'
   styleUrls: ['./usecases.component.scss']
 })
 export class UsecasesComponent implements OnInit {
+  readonly PLAIN_USER = 'Reguliere gebruiker'
+  readonly ADMIN_USER = 'Administrator'
+
   useCases: UseCase[] = [
     {
       id: 'UC-01',
@@ -17,7 +20,7 @@ export class UsecasesComponent implements OnInit {
         'De applicatie valideert de ingevoerde gegevens.',
         'Indien gegevens correct zijn dan redirect de applicatie naar het startscherm.'
       ],
-      actor: 'Reguliere gebruiker',
+      actor: this.PLAIN_USER,
       precondition: 'Geen',
       postcondition: 'De actor is ingelogd'
     },
@@ -26,7 +29,7 @@ export class UsecasesComponent implements OnInit {
       name: 'Naam',
       description: 'Hiermee kan een administrator ...',
       scenario: ['Stap 1', 'Stap 2', 'Stap 3'],
-      actor: 'Administrator',
+      actor: this.ADMIN_USER,
       precondition: 'De actor is ingelogd',
       postcondition: 'Het doel is bereikt.'
     }

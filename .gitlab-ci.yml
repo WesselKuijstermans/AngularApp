@@ -29,7 +29,8 @@ variables:
 #
 unittests:
   # image: atlassianlabs/docker-node-jdk-chrome-firefox
-  image: rastasheep/alpine-node-chromium:latest
+  # image: rastasheep/alpine-node-chromium:latest
+  image: markhobson/node-chrome:latest
   stage: test
   # services:
   #   - docker:dind
@@ -51,7 +52,8 @@ unittests:
 #
 end2end:
   # image: atlassianlabs/docker-node-jdk-chrome-firefox
-  image: rastasheep/alpine-node-chromium:latest
+  # image: rastasheep/alpine-node-chromium:latest
+  image: markhobson/node-chrome:latest
   stage: test
   # services:
   #   - docker:dind

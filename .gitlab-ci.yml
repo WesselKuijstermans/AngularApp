@@ -29,7 +29,7 @@ variables:
 #
 unittests:
   # image: atlassianlabs/docker-node-jdk-chrome-firefox
-  image: node:latest
+  image: selenium/node-chrome
   stage: test
   services:
     - docker:dind
@@ -51,7 +51,7 @@ unittests:
 #
 end2end:
   # image: atlassianlabs/docker-node-jdk-chrome-firefox
-  image: node:latest
+  image: selenium/node-chrome
   stage: test
   services:
     - docker:dind

@@ -31,8 +31,8 @@ unittests:
   # image: atlassianlabs/docker-node-jdk-chrome-firefox
   image: rastasheep/alpine-node-chromium:latest
   stage: test
-  services:
-    - docker:dind
+  # services:
+  #   - docker:dind
   variables:
     NODE_ENV: development
     # DB_USER: $DB_USER
@@ -53,8 +53,8 @@ end2end:
   # image: atlassianlabs/docker-node-jdk-chrome-firefox
   image: rastasheep/alpine-node-chromium:latest
   stage: test
-  services:
-    - docker:dind
+  # services:
+  #   - docker:dind
   variables:
     NODE_ENV: development
   before_script:

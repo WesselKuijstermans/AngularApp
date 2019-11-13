@@ -57,8 +57,10 @@ end2end:
     NODE_ENV: development
   before_script:
     - npm install --no-optional
-    - webdriver-manager update --versions.chrome=76.0.3809.68
+    # Install ChromeDriver v76 via package.json script
+    - npm run webdriver-manager-update
   script:
+    # Disable automatic update to ChromeDriver v78
     - npm run e2e --webdriver-update false
 
 #

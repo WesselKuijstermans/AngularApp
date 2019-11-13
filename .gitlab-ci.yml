@@ -29,11 +29,8 @@ variables:
 #
 unittests:
   # image: atlassianlabs/docker-node-jdk-chrome-firefox
-  # image: rastasheep/alpine-node-chromium:latest
   image: markhobson/node-chrome:latest
   stage: test
-  # services:
-  #   - docker:dind
   variables:
     NODE_ENV: development
     # DB_USER: $DB_USER
@@ -48,24 +45,18 @@ unittests:
     - npm run sonar
 
 #
-# Run unittests
+# Run end-to-end tests
 #
 end2end:
-  # image: atlassianlabs/docker-node-jdk-chrome-firefox
-  # image: rastasheep/alpine-node-chromium:latest
   image: markhobson/node-chrome:latest
   stage: test
-  # services:
-  #   - docker:dind
   variables:
     NODE_ENV: development
   before_script:
     - npm install --no-optional
-    # Install ChromeDriver v76 via package.json script
-    # - npm run webdriver-manager-update
+    - npm run webdriver-manager-update
   script:
-    # Disable automatic update to ChromeDriver v78
-    - npm run e2e # -- --webdriver-update false
+    - npm run e2e
 
 #
 # Deploy to Heroku

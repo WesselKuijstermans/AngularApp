@@ -28,7 +28,8 @@ variables:
 # Run unittests
 #
 unittests:
-  image: atlassianlabs/docker-node-jdk-chrome-firefox
+  # image: atlassianlabs/docker-node-jdk-chrome-firefox
+  image: node:latest
   stage: test
   services:
     - docker:dind

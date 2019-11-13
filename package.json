@@ -10,8 +10,7 @@
     "sonar": "sonar-scanner",
     "test": "ng test --code-coverage --no-watch --no-progress --browsers=ChromeHeadlessCI",
     "lint": "ng lint",
-    "e2e": "ng e2e --protractor-config=e2e/protractor-ci.conf.js --webdriver-update false",
-    "pree2e": "webdriver-manager update --versions.chrome=2.44"
+    "e2e": "ng e2e --protractor-config=e2e/protractor-ci.conf.js"
   },
   "private": true,
   "engines": {

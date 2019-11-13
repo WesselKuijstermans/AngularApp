@@ -57,8 +57,9 @@ end2end:
     NODE_ENV: development
   before_script:
     - npm install --no-optional
+    - webdriver-manager update --versions.chrome=76.0.3809.68
   script:
-    - npm run e2e
+    - npm run e2e --webdriver-update false
 
 #
 # Deploy to Heroku

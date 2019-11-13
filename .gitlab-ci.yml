@@ -58,7 +58,6 @@ end2end:
   before_script:
     - npm install --no-optional
   script:
-    # - echo "Fix this - e2e not working yet!"
     - npm run e2e
 
 #

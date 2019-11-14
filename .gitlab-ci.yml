@@ -28,7 +28,6 @@ variables:
 # Run unittests
 #
 unittests:
-  # image: atlassianlabs/docker-node-jdk-chrome-firefox
   image: markhobson/node-chrome:latest
   stage: test
   variables:

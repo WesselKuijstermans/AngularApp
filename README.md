@@ -83,6 +83,33 @@ git push origin master
 
 If all is well, your app is available on Heroku.
 
+## More Actions
+
+Some more options on this project;
+
+### Run Prettier on all files
+
+```
+npm run pretty
+```
+
+### Run tslint
+
+Validates the coding style of your files.
+
+```
+npm run lint
+```
+
+### Run Sonar scan
+
+Scans your files and gathers Sonar metrics. See the results at [Avans SonarQube](https://sonarqube.avans-informatica-breda.nl)
+
+```
+npm test
+npm run sonar
+```
+
 ## Troubleshooting
 
 To inspect the logging on Heroku, install the [Heroku Command Line Interface](https://devcenter.heroku.com/articles/heroku-cli), log in, and type

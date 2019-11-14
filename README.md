@@ -110,6 +110,14 @@ npm test
 npm run sonar
 ```
 
+### Git push without validation
+
+Should you want to skip the Husky Githooks:
+
+```
+git push origin master --no-verify
+```
+
 ## Troubleshooting
 
 To inspect the logging on Heroku, install the [Heroku Command Line Interface](https://devcenter.heroku.com/articles/heroku-cli), log in, and type

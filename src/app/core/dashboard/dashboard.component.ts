@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { environment } from '../../../environments/environment'
 
 @Component({
   selector: 'app-dashboard',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  runningMode: string
+
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.runningMode = environment.production ? 'production' : 'development'
+  }
 }

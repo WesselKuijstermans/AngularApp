@@ -103,10 +103,8 @@ npm run lint
 
 ### Run Sonar scan
 
-Scans your files and gathers Sonar metrics. See the results at [Avans SonarQube](https://sonarqube.avans-informatica-breda.nl)
-
-> Check the `sonar-project.properties` file and provide the two required environment variables. You'll find these values in your SonarQube project config.
-> `sonar.login=${env.SONAR_LOGIN_KEY}` > `sonar.projectKey=${env.SONAR_PROJECT_KEY}` > `sonar.projectName=${env.SONAR_PROJECT_KEY}`
+Scans your files and gathers Sonar metrics. See the results at [Avans SonarQube](https://sonarqube.avans-informatica-breda.nl/dashboard?id=angular-gitlab-heroku).
+Check the [sonar-project.properties](https://gitlab.com/avans-informatica-breda/programmeren/clientside-frameworks/angular-gitlab-heroku/blob/master/sonar-project.properties) file and provide the required environment variables `SONAR_LOGIN_KEY` and `SONAR_PROJECT_KEY`. You'll find these in your online SonarQube project configuration. You can add your own environment variables in the same way if needed.
 
 ```
 npm test

@@ -105,6 +105,9 @@ npm run lint
 
 Scans your files and gathers Sonar metrics. See the results at [Avans SonarQube](https://sonarqube.avans-informatica-breda.nl)
 
+> Check the `sonar-project.properties` file and provide the two required environment variables. You'll find these values in your SonarQube project config.
+> `sonar.login=${env.SONAR_LOGIN_KEY}` > `sonar.projectKey=${env.SONAR_PROJECT_KEY}` > `sonar.projectName=${env.SONAR_PROJECT_KEY}`
+
 ```
 npm test
 npm run sonar

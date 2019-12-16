@@ -55,7 +55,7 @@ end2end:
     - npm install --no-optional
   script:
     # - npm run webdriver-manager-update
-    - node .\node_modules\protractor\bin\webdriver-manager update
+    - node ./node_modules/protractor/bin/webdriver-manager update
     - npm run e2e
 
 #

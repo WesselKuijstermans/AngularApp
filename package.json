@@ -1,6 +1,6 @@
 {
   "name": "angular-gitlab-heroku",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "An example Angular app hosted on Heroku with CI/CD via GitLab.",
   "keywords": [
     "angular",
@@ -19,12 +19,10 @@
     "build": "ng build --prod --aot",
     "pretty": "prettier --write \"./src/**/*.{ts,js,css,scss,json}\"",
     "sonar": "sonar-scanner",
-    "sync": "sh sonar.syncversion.sh",
     "test": "ng test --code-coverage --no-watch --no-progress --browsers=ChromeHeadlessCI",
     "lint": "ng lint",
-    "e2e--commented--": "ng e2e --protractor-config=e2e/protractor-ci.conf.js",
-    "e2e": "ng e2e --webdriverUpdate=false",
-    "--comment--": "node ./node_modules/protractor/bin/webdriver-manager update --versions.chrome=76.0.3809.126"
+    "--comment--": "node ./node_modules/protractor/bin/webdriver-manager update --versions.chrome=76.0.3809.126",
+    "e2e": "ng e2e --webdriverUpdate=false"
   },
   "private": true,
   "engines": {
@@ -91,7 +89,6 @@
     "sonarqube-scanner": "^2.5.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "tslint-sonarts": "1.9.0",
-    "webdriver-manager": "^12.1.7"
+    "tslint-sonarts": "1.9.0"
   }
 }

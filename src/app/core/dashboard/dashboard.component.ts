@@ -9,11 +9,11 @@ import { environment } from '../../../environments/environment'
 export class DashboardComponent implements OnInit {
   runningMode: string
   apiUrl: string
-
-  constructor() {}
+  version: string
 
   ngOnInit() {
     this.runningMode = environment.production ? 'production' : 'development'
     this.apiUrl = environment.apiUrl
+    this.version = environment.version
   }
 }

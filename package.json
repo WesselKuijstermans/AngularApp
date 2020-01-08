@@ -34,7 +34,7 @@
   "--comment--": "Husky performs actions before or after a git-command. 'npm version' increments the package.json version number.",
   "husky": {
     "hooks": {
-      "post-merge": "(git-branch-is --quiet master && npm version minor) || (git-branch-is --quiet development && npm --no-git-tag-version version patch) || (echo ` post-merge versioning passed.`)",
+      "post-merge": "(git-branch-is --quiet master && npm version minor) || (git-branch-is --quiet development && npm --no-git-tag-version version patch) || (echo  post-merge versioning passed.)",
       "pre-commit": "pretty-quick --staged & ng lint",
       "pre-push": "npm test & npm run e2e"
     }

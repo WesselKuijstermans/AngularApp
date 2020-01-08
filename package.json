@@ -22,7 +22,8 @@
     "sync": "sh sonar.syncversion.sh",
     "test": "ng test --code-coverage --no-watch --no-progress --browsers=ChromeHeadlessCI",
     "lint": "ng lint",
-    "e2e": "ng e2e --protractor-config=e2e/protractor-ci.conf.js",
+    "e2e--commented--": "ng e2e --protractor-config=e2e/protractor-ci.conf.js",
+    "e2e": "ng e2e",
     "webdriver-manager-update-76": "node ./node_modules/protractor/bin/webdriver-manager update --versions.chrome=76.0.3809.126",
     "webdriver-manager-update": "node ./node_modules/protractor/bin/webdriver-manager update"
   },

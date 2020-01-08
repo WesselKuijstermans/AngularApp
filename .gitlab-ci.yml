@@ -54,7 +54,7 @@ end2end:
   before_script:
     - npm install --no-optional
   script:
-    - node ./node_modules/protractor/bin/webdriver-manager update --versions.chrome=76.0.3809.126 & npm run e2e
+    - node ./node_modules/protractor/bin/webdriver-manager update & npm run e2e
 
 #
 # Deploy to Heroku

@@ -20,7 +20,7 @@
   },
   "husky": {
     "hooks": {
-      "post-merge": "(git-branch-is master && npm version minor) || (git-branch-is development && npm --no-git-tag-version version patch)",
+      "post-merge": "(git-branch-is master && npm version minor) || (git-branch-is development && npm --no-git-tag-version version patch) || (echo pre-merge versioning passed.)",
       "pre-commit": "pretty-quick --staged & ng lint",
       "pre-push": "npm test & npm run e2e"
     }

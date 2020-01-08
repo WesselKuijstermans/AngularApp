@@ -54,6 +54,7 @@ end2end:
   before_script:
     - npm install --no-optional
   script:
+    - google-chrome --version
     - node ./node_modules/protractor/bin/webdriver-manager update & npm run e2e
 
 #

@@ -1,6 +1,6 @@
 {
   "name": "angular-gitlab-heroku",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "ng": "ng",
     "start": "node src/server.js",
@@ -18,9 +18,10 @@
     "node": "^10.13.0",
     "npm": "^6.4.1"
   },
+  "--comment--": "Husky performs actions before or after a git-command. 'npm version' increments the package.json version number.",
   "husky": {
     "hooks": {
-      "post-merge": "(git-branch-is master && npm version minor) || (git-branch-is development && npm --no-git-tag-version version patch) || (echo pre-merge versioning passed.)",
+      "post-merge": "(git-branch-is --quiet master && npm version minor) || (git-branch-is --quiet development && npm --no-git-tag-version version patch) || (echo pre-merge versioning passed.)",
       "pre-commit": "pretty-quick --staged & ng lint",
       "pre-push": "npm test & npm run e2e"
     }

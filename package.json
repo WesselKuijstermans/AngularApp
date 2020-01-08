@@ -1,5 +1,6 @@
 {
   "name": "angular-gitlab-heroku",
+  "version": "0.0.5",
   "description": "An example Angular app hosted on Heroku with CI/CD via GitLab.",
   "keywords": [
     "angular",
@@ -7,7 +8,6 @@
     "gitlab",
     "heroku"
   ],
-  "version": "0.0.4",
   "main": "src/server.js",
   "author": {
     "name": "Robin Schellius"
@@ -31,9 +31,11 @@
     "node": "^10.13.0",
     "npm": "^6.4.1"
   },
+  "--comment--": "Husky performs actions before or after a git-command. 'npm version' increments the package.json version number.",
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged & ng lint & npm version patch -git-tag-version false",
+      "post-merge": "(git-branch-is --quiet master && npm version minor) || (git-branch-is --quiet development && npm --no-git-tag-version version patch) || (echo pre-merge versioning passed.)",
+      "pre-commit": "pretty-quick --staged & ng lint",
       "pre-push": "npm test & npm run e2e"
     }
   },
@@ -43,7 +45,7 @@
   },
   "homepage": "https://gitlab.com/avans-informatica-breda/programmeren/clientside-frameworks/angular-gitlab-heroku",
   "dependencies": {
-    "@angular-devkit/build-angular": "^0.803.17",
+    "@angular-devkit/build-angular": "^0.803.21",
     "@angular/animations": "~8.2.5",
     "@angular/cli": "~8.3.4",
     "@angular/common": "~8.2.5",
@@ -72,6 +74,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
+    "git-branch-is": "^3.1.0",
     "husky": "^1.3.1",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -89,6 +92,6 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "tslint-sonarts": "1.9.0",
-    "version": "^0.1.2"
+    "webdriver-manager": "^12.1.7"
   }
 }

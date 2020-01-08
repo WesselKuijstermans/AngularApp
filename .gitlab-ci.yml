@@ -55,9 +55,9 @@ end2end:
     - npm install --no-optional
   script:
     # - npm run webdriver-manager-update
-    # - node ./node_modules/protractor/bin/webdriver-manager update
     # - webdriver-manager update & npm run e2e
-    - npm run webdriver-manager-update & npm run e2e
+    # - npm run webdriver-manager-update & npm run e2e
+    - node ./node_modules/protractor/bin/webdriver-manager update & npm run e2e
 
 #
 # Deploy to Heroku

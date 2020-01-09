@@ -11,83 +11,34 @@ The example app is [available on Heroku](https://angular-gitlab-heroku.herokuapp
 - [Angular CLI](https://github.com/angular/angular-cli) installed
 - [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed
 
-# Steps
+## Running in production mode on localhost
 
-To prepare your app for Heroku, you need to add some new files and settings, and alter some existing ones. To do so, follow these steps.
+When you start your application during development using `ng serve`, your Angular app runs in development mode. Angular starts a small webserver, serves your app, and watches for code changes.
 
-## Update package.json
+When you deploy your application to an online cloud provider, your app runs in production mode. You do not use `ng serve` then but you must provide your own webserver that hosts your application. In our case, this webserver is realized in the `\src\server.js` file. Angular provides the `ng build` command to build a production version of your app. The production release, an efficient and minimized version of your application, is placed in the `/dist` folder. When de user navigates to the URL that is linked to your online deployed webserver, the app is downloaded from the `/dist` folder to the user's browser and started.
 
-Open [package.json](./package.json) and update the `scripts` section with the following commands:
-
-```
-"start": "node src\server.js",
-"postinstall": "ng build --prod --aot",
-```
-
-Move the following packages from `devDependencies` into `dependencies`.
-
-```
-"@angular-devkit/build-angular": "~0.7.0",
-"@angular/cli": "~6.1.5",
-"@angular/compiler-cli": "^6.1.0",
-"typescript": "~2.7.2",
-```
-
-> Why? Your app will run in production mode. Only dependencies from the `dependencies` section will be available.
-
-## Install Express, Path and Compression via npm
-
-Your app will use a nodejs server to serve the application files. We first install additional dependencies.
-
-```
-npm install express path compression --save
-```
-
-## Add the `server.js` file
-
-Copy this [server.js](./src/server.js) file to your project root.
-Change the constant `appname` to the name of your app.
-
-> The appname is listed in the `angular.json` file and matches the `.\dist\{appname}` directory that is available after a production build (see next step).
-
-## Verify that your app runs in production mode on localhost
-
-Run a production build to verify your install.
+To verify that everyting works in production mode, you can build and run your production-ready application on localhost using the following commands.
 
 ```
 ng build --prod --aot
-node server.js
+node src\server.js
 ```
 
-> The build artifacts will be stored in the `dist/{appname}` directory.
-> Verify that this directory exists!
-
-> The `--prod` flag triggers a production build. The `--aot` flag triggers a ahead-of-time compilation build.
-
-## Create a new app on Heroku
+## Creating an app on Heroku
 
 - Go to [Heroku](http://www.heroku.com) and create a new app.
 - On the Heroku dashboard, go to 'Deploy'.
 - Follow the steps under 'Deploy using Heroku Git'.
 
-## Add the `.gitlab-ci.yml` file from this repository
-
-Adding the `.gitlab-ci.yml` file enables automatic testing, code metrics via SonarQube, and deployment to Heroku from your GitLab repo. Make sure you add the correct `HEROKU_API_KEY` and `HEROKU_APP_NAME` variables in the GitLab config settings of your repo. You find the api key on your Heroku profile page. The app name is the name of your app on Heroku.
-
-## Push your project to GitLab
-
-```
-git commit -am "Your comment here"
-git push origin master
-```
-
-If all is well, your app is available on Heroku.
+If all is well, that means your tests succeed and your app has been built in production mode, your app is available on Heroku after a push to GitLab.
 
 ## More Actions
 
-Some more options on this project;
+Some more options on this project:
 
 ### Run Prettier on all files
+
+Prettyfies your code.
 
 ```
 npm run pretty
@@ -113,7 +64,7 @@ npm run sonar
 
 ### Git push without validation
 
-Should you want to skip the Husky Githooks:
+Should you want to skip the [Husky](https://www.npmjs.com/package/husky) Githooks:
 
 ```
 git push origin master --no-verify

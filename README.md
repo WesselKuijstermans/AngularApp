@@ -28,11 +28,15 @@ Check [http://localhost:4200](http://localhost:4200) to see if your application 
 
 ## Creating an app on Heroku
 
-- Go to [Heroku](http://www.heroku.com) and create a new app.
-- On the Heroku dashboard, go to 'Deploy'.
-- Follow the steps under 'Deploy using Heroku Git'.
+To deploy your app to Heroku, do the following:
 
-If all is well, that means your tests succeed and your app has been built in production mode, your app is available on Heroku after a push to GitLab.
+- Navigate to [http://www.heroku.com](http://www.heroku.com) and create a new app.
+- In your GitLab project settings, create two environment variables to connect your project to Heroku.
+  - `HEROKU_APP_NAME` holds the Heroku name of your app (the first part of the URL that points to your online application)
+  - `HEROKU_API_KEY` holds the API key that you find in your [Heroku Account settings](https://dashboard.heroku.com/account)
+- Perform a `git push` to trigger a GitLab CI/CD pipeline build.
+
+If all is well - which means your tests succeed and your app has been built in production mode - your app is available on Heroku.
 
 ## More Actions
 

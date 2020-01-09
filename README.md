@@ -31,7 +31,7 @@ Check [http://localhost:4200](http://localhost:4200) to see if your application 
 To deploy your app to Heroku, do the following:
 
 - Navigate to [http://www.heroku.com](http://www.heroku.com) and create a new app.
-- In your GitLab project settings, create two environment variables to connect your project to Heroku.
+- In your GitLab project settings, create two environment variables to connect your project to Heroku. These values are being used in the `.gitlab-ci.yml` file to connect your GitLab project to your Heroku account.
   - `HEROKU_APP_NAME` holds the Heroku name of your app (the first part of the URL that points to your online application)
   - `HEROKU_API_KEY` holds the API key that you find in your [Heroku Account settings](https://dashboard.heroku.com/account)
 - Perform a `git push` to trigger a GitLab CI/CD pipeline build.

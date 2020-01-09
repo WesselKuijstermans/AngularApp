@@ -1,4 +1,4 @@
-# Angular Heroku example
+# Angular Gitlab Heroku example
 
 Example project that illustrates how to prepare a generated Angular app and deploy it to [Heroku](http://www.heroku.com).
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.

@@ -17,12 +17,14 @@ When you start your application during development using `ng serve`, your Angula
 
 When you deploy your application to an online cloud provider, your app runs in production mode. You do not use `ng serve` then but you must provide your own webserver that hosts your application. In our case, this webserver is realized in the `\src\server.js` file. Angular provides the `ng build` command to build a production version of your app. The production release, an efficient and minimized version of your application, is placed in the `/dist` folder. When de user navigates to the URL that is linked to your online deployed webserver, the app is downloaded from the `/dist` folder to the user's browser and started.
 
-To verify that everyting works in production mode, you can build and run your production-ready application on localhost using the following commands.
+To verify that everything works in production mode, you can build and run your production-ready application on localhost using the following commands.
 
 ```
 ng build --prod --aot
 node src\server.js
 ```
+
+Check [http://localhost:4200](http://localhost:4200) to see if your application runs as expected.
 
 ## Creating an app on Heroku
 

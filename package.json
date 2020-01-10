@@ -1,6 +1,6 @@
 {
   "name": "angular-gitlab-heroku",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "An example Angular app hosted on Heroku with CI/CD via GitLab.",
   "keywords": [
     "angular",

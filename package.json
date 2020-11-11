@@ -21,8 +21,8 @@
     "sonar": "sonar-scanner",
     "test": "ng test --code-coverage --no-watch --no-progress --browsers=ChromeHeadlessCI",
     "lint": "ng lint",
-    "--comment--": "node ./node_modules/protractor/bin/webdriver-manager update --versions.chrome=76.0.3809.126",
-    "e2e": "ng e2e --webdriverUpdate=false"
+    "e2e": "node ./node_modules/protractor/bin/webdriver-manager update & ng e2e",
+    "--comment--": "ng e2e --webdriverUpdate=false"
   },
   "private": true,
   "engines": {

@@ -41,7 +41,7 @@ unittests:
     - npm install --no-optional
   script:
     - npm run test
-    - npm run sonar
+    # - npm run sonar
 
 #
 # Run end-to-end tests
@@ -55,7 +55,8 @@ end2end:
     - npm install --no-optional
   script:
     - google-chrome --version
-    - node ./node_modules/protractor/bin/webdriver-manager update --versions.chrome=76.0.3809.100
+    # - node ./node_modules/protractor/bin/webdriver-manager update --versions.chrome=76.0.3809.100
+    - node ./node_modules/protractor/bin/webdriver-manager update
     - npm run e2e
 
 #
@@ -80,3 +81,19 @@ production:
     - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_API_KEY
   only:
     - master
+
+#
+# Example: Deploy to Google Firebase, as an alternative to Heroku
+#
+firebase:
+  stage: deploy
+  image: markhobson/node-chrome:latest
+  before_script:
+    - npm i --no-optional
+    - npm i -g firebase-tools
+  script:
+    - npm run build
+    - firebase deploy --token $FIREBASE_TOKEN
+  only:
+    # - master
+    - firebase-branch

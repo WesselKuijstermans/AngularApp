@@ -11,12 +11,12 @@ app.use(compression())
 
 //
 // appname is the name of the "defaultProject" value that was set in the angular.json file.
-// When built in production mode using 'ng build --prod', a ./dist/{appname} folder is
+// When built in production mode using 'ng build', a ./dist/{appname} folder is
 // created, containing the generated application. The appname points to that folder.
 //
 // Replace the name below to match your own "defaultProject" value!
 //
-const appname = 'angular-gitlab-heroku'
+const appname = 'my-app'
 
 // Set express options
 const options = {

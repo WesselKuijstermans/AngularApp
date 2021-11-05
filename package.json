@@ -1,14 +1,33 @@
 {
-  "name": "my-app",
-  "version": "0.1.2",
+  "name": "angular-gitlab-heroku",
+  "version": "0.5.0",
+  "description": "An example Angular app hosted on Heroku with CI/CD via GitLab.",
+  "keywords": [
+    "angular",
+    "typescript",
+    "gitlab",
+    "heroku"
+  ],
+  "main": "src/server.js",
+  "author": {
+    "name": "Robin Schellius"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "node src/server.js",
+    "postinstall": "ng build",
+    "build": "ng build --prod --aot",
+    "pretty": "prettier --write \"./src/**/*.{ts,js,css,scss,json}\"",
+    "sonar": "sonar-scanner",
+    "test": "ng test --code-coverage --no-watch --no-progress --browsers=ChromeHeadlessCI",
+    "lint": "ng lint",
+    "e2e": "echo e2e testing wordt later toegevoegd"
   },
   "private": true,
+  "engines": {
+    "node": "^10.13.0",
+    "npm": "^6.4.1"
+  },
   "dependencies": {
     "@angular/animations": "~13.0.0",
     "@angular/common": "~13.0.0",

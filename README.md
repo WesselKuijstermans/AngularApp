@@ -20,8 +20,8 @@ When you deploy your application to an online cloud provider, your app runs in p
 To verify that everything works in production mode, you can build and run your production-ready application on localhost using the following commands.
 
 ```
-ng build --prod --aot
-node src\server.js
+ng build --aot
+node src\server.js  // of npm start
 ```
 
 Check [http://localhost:4200](http://localhost:4200) to see if your application runs as expected.
@@ -66,14 +66,6 @@ Check the [sonar-project.properties](https://gitlab.com/avans-informatica-breda/
 ```
 npm test
 npm run sonar
-```
-
-### Git push without validation
-
-Should you want to skip the [Husky](https://www.npmjs.com/package/husky) Githooks:
-
-```
-git push origin master --no-verify
 ```
 
 ## Troubleshooting

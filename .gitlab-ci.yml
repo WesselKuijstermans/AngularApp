@@ -42,22 +42,24 @@ unittests:
   script:
     - npm run test
     # - npm run sonar
+  only:
+    - release
 
 #
 # Run end-to-end tests
 #
-end2end:
-  image: markhobson/node-chrome:latest
-  stage: test
-  variables:
-    NODE_ENV: development
-  before_script:
-    - npm install --no-optional
-  script:
-    - google-chrome --version
-    # - node ./node_modules/protractor/bin/webdriver-manager update --versions.chrome=76.0.3809.100
-    - node ./node_modules/protractor/bin/webdriver-manager update
-    - npm run e2e
+# end2end:
+#   image: markhobson/node-chrome:latest
+#   stage: test
+#   variables:
+#     NODE_ENV: development
+#   before_script:
+#     - npm install --no-optional
+#   script:
+#     - google-chrome --version
+#     # - node ./node_modules/protractor/bin/webdriver-manager update --versions.chrome=76.0.3809.100
+#     - node ./node_modules/protractor/bin/webdriver-manager update
+#     - npm run e2e
 
 #
 # Deploy to Heroku

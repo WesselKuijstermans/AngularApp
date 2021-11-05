@@ -41,9 +41,7 @@ import { Component, Input, OnInit } from '@angular/core'
             </li>
             <li class="nav-item dropdown">
               <div ngbDropdown class="d-inline-block">
-                <button class="btn btn-link" id="dropdownMenu1" ngbDropdownToggle>
-                  Actions
-                </button>
+                <button class="btn btn-link" id="dropdownMenu1" ngbDropdownToggle>Actions</button>
                 <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu1">
                   <button
                     class="dropdown-item"
@@ -93,6 +91,6 @@ import { Component, Input, OnInit } from '@angular/core'
   ]
 })
 export class NavbarComponent {
-  @Input() title: string
+  @Input() title: string = ''
   isNavbarCollapsed = true
 }

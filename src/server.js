@@ -18,8 +18,18 @@ app.use(compression())
 //
 const appname = 'angular-gitlab-heroku'
 
+// Set express options
+const options = {
+  setHeaders: (res, path, stat) => {
+    res.set(
+      'Content-Security-Policy',
+      "default-src 'self' http://angular-gitlab-heroku.herokuapp.com/; script-src 'self' http://angular-gitlab-heroku.herokuapp.com/; connect-src http://angular-gitlab-heroku.herokuapp.com/ 'self'; img-src 'self' www.google.com; style-src 'self' 'unsafe-inline';"
+    )
+  }
+}
+
 // Point static path to dist
-app.use(express.static(path.join(__dirname, '..', 'dist', appname)))
+app.use(express.static(path.join(__dirname, '..', 'dist', appname), options))
 
 // Catch all routes and return the index file
 app.get('*', (req, res) => {

@@ -1,94 +1,42 @@
 {
-  "name": "angular-gitlab-heroku",
-  "version": "0.5.0",
-  "description": "An example Angular app hosted on Heroku with CI/CD via GitLab.",
-  "keywords": [
-    "angular",
-    "typescript",
-    "gitlab",
-    "heroku"
-  ],
-  "main": "src/server.js",
-  "author": {
-    "name": "Robin Schellius"
-  },
+  "name": "my-app",
+  "version": "0.1.2",
   "scripts": {
     "ng": "ng",
-    "start": "node src/server.js",
-    "postinstall": "ng build --prod --aot",
-    "build": "ng build --prod --aot",
-    "pretty": "prettier --write \"./src/**/*.{ts,js,css,scss,json}\"",
-    "sonar": "sonar-scanner",
-    "test": "ng test --code-coverage --no-watch --no-progress --browsers=ChromeHeadlessCI",
-    "lint": "ng lint",
-    "e2e": "node ./node_modules/protractor/bin/webdriver-manager update & ng e2e",
-    "--comment--": "ng e2e --webdriverUpdate=false"
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
   },
   "private": true,
-  "engines": {
-    "node": "^10.13.0",
-    "npm": "^6.4.1"
-  },
-  "--comment--": "Husky performs actions before or after a git-command. 'npm version' increments the package.json version number.",
-  "husky": {
-    "hooks": {
-      "post-merge": "(git-branch-is --quiet master && npm version minor) || (git-branch-is --quiet development && npm --no-git-tag-version version patch) || (echo  post-merge versioning passed.)",
-      "pre-commit": "pretty-quick --staged & ng lint",
-      "pre-push": "npm test & npm run e2e"
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://gitlab.com/avans-informatica-breda/programmeren/clientside-frameworks/angular-gitlab-heroku.git"
-  },
-  "homepage": "https://gitlab.com/avans-informatica-breda/programmeren/clientside-frameworks/angular-gitlab-heroku",
   "dependencies": {
-    "@angular-devkit/build-angular": "^0.1002.0",
-    "@angular/animations": "~10.2.3",
-    "@angular/cli": "~10.2.0",
-    "@angular/common": "~10.2.3",
-    "@angular/compiler": "~10.2.3",
-    "@angular/compiler-cli": "~10.2.3",
-    "@angular/core": "~10.2.3",
-    "@angular/forms": "~10.2.3",
-    "@angular/http": "^7.2.15",
-    "@angular/platform-browser": "~10.2.3",
-    "@angular/platform-browser-dynamic": "~10.2.3",
-    "@angular/router": "~10.2.3",
-    "@ng-bootstrap/ng-bootstrap": "^8.0.0",
-    "bootstrap": "^4.5.3",
-    "compression": "^1.7.4",
-    "core-js": "^3.7.0",
-    "express": "^4.17.1",
-    "path": "^0.12.7",
-    "rxjs": "~6.6.3",
-    "tslib": "^2.0.3",
-    "typescript": "~4.0.5",
-    "zone.js": "~0.11.3"
+    "@angular/animations": "~13.0.0",
+    "@angular/common": "~13.0.0",
+    "@angular/compiler": "~13.0.0",
+    "@angular/core": "~13.0.0",
+    "@angular/forms": "~13.0.0",
+    "@angular/localize": "~13.0.0",
+    "@angular/platform-browser": "~13.0.0",
+    "@angular/platform-browser-dynamic": "~13.0.0",
+    "@angular/router": "~13.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^10.0.0",
+    "bootstrap": "^4.5.0",
+    "rxjs": "~7.4.0",
+    "tslib": "^2.3.1",
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular/language-service": "~10.2.3",
-    "@types/jasmine": "~3.6.1",
-    "@types/jasminewd2": "~2.0.8",
-    "@types/node": "~14.14.7",
-    "codelyzer": "^6.0.1",
-    "git-branch-is": "^4.0.0",
-    "husky": "^4.3.0",
-    "jasmine-core": "~3.6.0",
-    "jasmine-spec-reporter": "~6.0.0",
-    "karma": "~5.2.3",
+    "@angular-devkit/build-angular": "^13.0.1",
+    "@angular/cli": "~13.0.1",
+    "@angular/compiler-cli": "~13.0.0",
+    "@types/jasmine": "~3.10.2",
+    "@types/node": "^16.11.6",
+    "jasmine-core": "~3.10.1",
+    "karma": "~6.3.7",
     "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage-istanbul-reporter": "~3.0.3",
-    "karma-firefox-launcher": "^2.1.0",
+    "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.1",
-    "karma-jasmine-html-reporter": "^1.5.4",
-    "nyc": "^15.1.0",
-    "prettier": "^2.1.2",
-    "pretty-quick": "^3.1.0",
-    "protractor": "7.0.0",
-    "sonarqube-scanner": "^2.8.0",
-    "ts-node": "~9.0.0",
-    "tslint": "~5.20.1",
-    "tslint-sonarts": "1.9.0"
+    "karma-jasmine-html-reporter": "~1.7.0",
+    "typescript": "~4.4.4"
   }
 }

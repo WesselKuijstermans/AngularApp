@@ -10,7 +10,8 @@ import { NavbarComponent } from './core/navbar/navbar.component'
 import { UsecasesComponent } from './pages/about/usecases/usecases.component'
 import { UsecaseComponent } from './pages/about/usecases/usecase/usecase.component'
 import { LayoutComponent } from './core/layout/layout.component';
-import { FooterComponent } from './core/footer/footer.component'
+import { FooterComponent } from './core/footer/footer.component';
+import { UserComponent } from './user/user.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from './core/footer/footer.component'
     UsecasesComponent,
     UsecaseComponent,
     DashboardComponent,
-    FooterComponent
+    FooterComponent,
+    UserComponent
   ],
   imports: [BrowserModule, RouterModule, NgbModule, AppRoutingModule],
   providers: [],

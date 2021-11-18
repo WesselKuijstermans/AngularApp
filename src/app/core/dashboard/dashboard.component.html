@@ -1,0 +1,27 @@
+<div class="starter-template">
+  <h1>Bootstrap starter template</h1>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col-1">First Name</th>
+          <th scope="col-4">Email</th>
+          <th scope="col-1">Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userList">
+          <td>{{user.id}}</td>
+          <td>{{user.firstname}}</td>
+          <td>{{user.emailAdress}}</td>
+          <td>{{user.role}}</td>
+        </tr>
+      </tbody>
+    </table>
+  <h3>Info</h3>
+  <p>
+    This app is running in <strong>'{{ runningMode }}'</strong> mode. <br />
+    Environment API URL: <strong>'{{ apiUrl }}'</strong>.<br />
+    Version: <strong>{{ version }}</strong>
+  </p>
+</div>

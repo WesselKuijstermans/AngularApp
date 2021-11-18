@@ -1,7 +1,15 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\about\\usecases",
+    "\\src\\app\\core\\dashboard",
+    "\\src\\app\\core\\navbar",
+    "\\src\\app\\Entities",
+    "\\src\\app\\Entities\\user",
+    "\\src\\app\\pages\\about\\usecases"
   ],
-  "SelectedNode": "\\MyKeyShop",
+  "SelectedNode": "\\src\\app\\Entities\\user\\user.service.ts",
   "PreviewInSolutionExplorer": false
 }

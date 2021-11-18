@@ -1,0 +1,27 @@
+<button routerLink="addgame" class="btn btn-success">Add Game</button>
+<br>
+<br>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col-1">Title</th>
+      <th scope="col-4">Developer</th>
+      <th scope="col-4">Publisher</th>
+      <th scope="col-4">Rating</th>
+      <th scope="col-4">Age Rating</th>
+      <th scope="col-1">Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let game of gameList">
+      <td>{{game.id}}</td>
+      <td>{{game.title}}</td>
+      <td>{{game.developer}}</td>
+      <td>{{game.publisher}}</td>
+      <td>{{game.rating}}/10</td>
+      <td>{{game.agecategory}}</td>
+      <td><button routerLink="editgame" class="btn btn-primary">Edit Game</button></td>
+    </tr>
+  </tbody>
+</table>

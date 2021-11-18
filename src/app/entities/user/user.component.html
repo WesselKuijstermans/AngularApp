@@ -1,0 +1,21 @@
+<button routerlink="adduser" class="btn btn-success">Add User</button>
+<br>
+<br>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col-1">First Name</th>
+      <th scope="col-4">Last Name</th>
+      <th scope="col-1">Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userList">
+      <td>{{user.id}}</td>
+      <td>{{user.firstname}}</td>
+      <td>{{user.lastname}}</td>
+      <td><button routerLink="edituser" class="btn btn-primary">Edit User</button></td>
+    </tr>
+  </tbody>
+</table>

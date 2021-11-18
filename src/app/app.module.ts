@@ -11,7 +11,11 @@ import { UsecasesComponent } from './pages/about/usecases/usecases.component'
 import { UsecaseComponent } from './pages/about/usecases/usecase/usecase.component'
 import { LayoutComponent } from './core/layout/layout.component';
 import { FooterComponent } from './core/footer/footer.component';
-import { UserComponent } from './user/user.component'
+import { UserComponent } from './entities/user/user.component';
+import { GameComponent } from './entities/game/game.component';
+import { OrderComponent } from './entities/order/order.component';
+import { GameFormComponent } from './entities/game-form/game-form.component';
+import { GameEditComponent } from './entities/game-edit/game-edit.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { UserComponent } from './user/user.component'
     UsecaseComponent,
     DashboardComponent,
     FooterComponent,
-    UserComponent
+    UserComponent,
+    GameComponent,
+    OrderComponent,
+    GameFormComponent,
+    GameEditComponent,
   ],
   imports: [BrowserModule, RouterModule, NgbModule, AppRoutingModule],
   providers: [],

@@ -2,7 +2,6 @@ export enum UserRole {
     admin = 'admin',
     editor = 'editor',
     guest = 'guest',
-    aparteJongen = "aparte jongen"
 }
 
 export class User {
@@ -12,7 +11,7 @@ export class User {
     emailAdress: string = '';
     role: UserRole = UserRole.guest;
 
-    constructor(firstname = "", lastname = '', emailadress = '') {
+    constructor(firstname = '', lastname = '', emailadress = '') {
         this.firstname = firstname;
         this.lastname = lastname;
         this.emailAdress = emailadress;

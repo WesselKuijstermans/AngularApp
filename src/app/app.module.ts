@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { RouterModule } from '@angular/router'
-
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { DashboardComponent } from './core/dashboard/dashboard.component'
@@ -16,6 +15,8 @@ import { GameComponent } from './entities/game/game.component';
 import { OrderComponent } from './entities/order/order.component';
 import { GameFormComponent } from './entities/game-form/game-form.component';
 import { GameEditComponent } from './entities/game-edit/game-edit.component';
+import { UserEditComponent } from './entities/user-edit/user-edit.component'
+import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -27,12 +28,13 @@ import { GameEditComponent } from './entities/game-edit/game-edit.component';
     DashboardComponent,
     FooterComponent,
     UserComponent,
+    UserEditComponent,
     GameComponent,
     OrderComponent,
     GameFormComponent,
     GameEditComponent,
   ],
-  imports: [BrowserModule, RouterModule, NgbModule, AppRoutingModule],
+  imports: [BrowserModule, RouterModule, NgbModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

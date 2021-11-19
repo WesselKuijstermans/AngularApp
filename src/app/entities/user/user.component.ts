@@ -17,4 +17,8 @@ export class UserComponent implements OnInit {
     this.userList = this.userservice.GetUsers();
   }
 
+  DeleteUser(id: number): void{ 
+      this.userservice.DeleteUser(id)
+  }
+
 }

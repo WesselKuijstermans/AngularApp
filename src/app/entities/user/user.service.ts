@@ -8,24 +8,38 @@ import { User, UserRole} from "./user.model";
 export class UserService {
     readonly users: User[] = [
         {
-            id: 0,
+            id: 1,
             firstname: "Wessel",
             lastname: "Kuijstermans",
             emailAdress: "w.kuijstermans@student.avans.nl",
             role: UserRole.admin
         },
         {
-            id: 1,
+            id: 2,
             firstname: "Tim",
             lastname: "de Laater",
             emailAdress: "t.delaater@student.avans.nl",
-            role: UserRole.aparteJongen
+            role: UserRole.guest
         },
         {
-            id: 2,
+            id: 3,
             firstname: "Luuk",
             lastname: "Bartels",
             emailAdress: "l.bartels@student.avans.nl",
+            role: UserRole.guest
+        },
+        {
+            id: 4,
+            firstname: "Noah",
+            lastname: "de Keijzer",
+            emailAdress: "n.dekeijzer@student.avans.nl",
+            role: UserRole.guest
+        },
+        {
+            id: 5,
+            firstname: "Wouter",
+            lastname: "Zegers",
+            emailAdress: "w.zegers@student.avans.nl",
             role: UserRole.guest
         }
     ];
@@ -40,5 +54,30 @@ export class UserService {
 
     GetUserById(id: number): User {
         return this.users.filter((user) => user.id === id)[0];
+    }
+
+    AddUser(user: User): void {
+        user.id = this.users.length + 1;
+        this.users.push(user);
+    }
+
+    UpdateUser(user : User): void{
+        let index = 0
+        this.users.forEach(element => {
+            if (element.id == user.id) {
+                this.users[index] = user
+            }
+            index ++
+        })
+    }
+
+    public DeleteUser(id: number): void {
+        let index = 0
+        this.users.forEach(element => {
+            if (element.id == id) {
+                this.users.splice(index, 1)
+            }
+            index ++
+        });
     }
 }

@@ -1,23 +1,24 @@
 <a routerLink="edit/0" class="btn btn-success">Add User</a>
-<br>
-<br>
+<br />
+<br />
 <table class="table table-hover">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col-1">First Name</th>
       <th scope="col-4">Last Name</th>
-      <th scope="col-1">Edit</th>
-      <th scope="col-1">Delete</th>
+      <th scope="col-1">Edit/Delete</th>
     </tr>
   </thead>
   <tbody>
-      <tr *ngFor="let user of userList" routerLink="{{user.id}}" >
-        <td>{{user.id}}</td>
-        <td>{{user.firstname}}</td>
-        <td>{{user.lastname}}</td>
-        <td><a class="btn btn-primary" routerLink="edit/{{user.id}}">Edit User</a></td>
-        <td><button class="btn btn-danger" (click)="DeleteUser(user.id)">X</button></td>
+    <tr *ngFor="let user of userList" routerLink="{{ user.id }}">
+      <td>{{ user.id }}</td>
+      <td>{{ user.firstname }}</td>
+      <td>{{ user.lastname }}</td>
+      <td>
+        <a class="btn btn-primary" style="margin-right: 10px" routerLink="edit/{{ user.id }}">Edit User</a>
+        <button class="btn btn-danger" (click)="DeleteUser(user.id)">X</button>
+      </td>
     </tr>
   </tbody>
 </table>
